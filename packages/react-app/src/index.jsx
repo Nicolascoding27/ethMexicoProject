@@ -5,6 +5,8 @@ import { BrowserRouter } from "react-router-dom";
 import ReactDOM from "react-dom";
 import App from "./App";
 import "./index.css";
+// import dynamic from 'next/dynamic'
+// import {worldId} from 'worldcoin/worldId'
 
 const themes = {
   dark: `${process.env.PUBLIC_URL}/dark-theme.css`,
@@ -19,6 +21,11 @@ const client = new ApolloClient({
   uri: subgraphUri,
   cache: new InMemoryCache(),
 });
+// worldID.init("world-id-container", {
+//   enable_telemetry: true,
+//   action_id: "wid_staging_8cb023f97fd98b0ac2cfab26edba68a5",
+//   signal: "yourSignal" // <- Set an appropriate signal for each user
+// });
 
 ReactDOM.render(
   <ApolloProvider client={client}>
